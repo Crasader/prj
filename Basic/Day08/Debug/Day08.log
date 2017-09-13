@@ -1,0 +1,5 @@
+﻿  main.c
+c:\users\kym2-21\source\prj\basic\day08\main.c(14): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+c:\users\kym2-21\source\prj\basic\day08\main.c(14): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  Day08.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day08.exe
+  Day08.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day08.pdb (Partial PDB)
