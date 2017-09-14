@@ -1,0 +1,4 @@
+﻿  main.c
+c:\users\kym2-21\source\prj\basic\day09_quiz\main.c(28): warning C4013: 'getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  Day09_Quiz.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day09_Quiz.exe
+  Day09_Quiz.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day09_Quiz.pdb (Partial PDB)
