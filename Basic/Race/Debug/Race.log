@@ -1,3 +1,4 @@
 ﻿  main.c
+c:\users\kym2-21\source\prj\basic\race\main.c(48): warning C4013: 'getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   Race.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Race.exe
   Race.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Race.pdb (Partial PDB)
