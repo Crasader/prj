@@ -1,0 +1,13 @@
+﻿  main.c
+c:\users\kym2-21\source\prj\basic\day11\structheader.h(3): error C2011: 'headstruct': 'struct' 형식 재정의
+  c:\users\kym2-21\source\prj\basic\day11\structheader.h(3): note: 'headstruct' 선언을 참조하십시오.
+c:\users\kym2-21\source\prj\basic\day11\main.c(51): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kym2-21\source\prj\basic\day11\main.c(53): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kym2-21\source\prj\basic\day11\main.c(55): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kym2-21\source\prj\basic\day11\main.c(58): warning C4013: 'doWork'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\kym2-21\source\prj\basic\day11\main.c(49): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  externtest2.c
+c:\users\kym2-21\source\prj\basic\day11\externtest2.c(7): warning C4013: 'printf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  externtest.c
+c:\users\kym2-21\source\prj\basic\day11\externtest.c(10): warning C4013: 'printf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  코드를 생성하고 있습니다...
