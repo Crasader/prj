@@ -1,3 +1,5 @@
 ﻿  main.c
-  Baseball.vcxproj -> C:\Users\KYM2-21\source\repos\Basic\Debug\Baseball.exe
-  Baseball.vcxproj -> C:\Users\KYM2-21\source\repos\Basic\Debug\Baseball.pdb (Partial PDB)
+c:\users\kym2-21\source\prj\basic\baseball\main.c(63): warning C4013: 'CutNumber'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\kym2-21\source\prj\basic\baseball\main.c(90): warning C4716: 'ShowResult': 값을 반환해야 합니다.
+  Baseball.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Baseball.exe
+  Baseball.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Baseball.pdb (Partial PDB)

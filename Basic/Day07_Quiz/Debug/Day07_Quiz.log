@@ -1,3 +1,3 @@
 ﻿  main.c
-  Day07_Quiz.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day07_Quiz.exe
-  Day07_Quiz.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day07_Quiz.pdb (Partial PDB)
+c:\users\kym2-21\source\prj\basic\day07_quiz\main.c(82): error C2084: 'int main()' 함수에 이미 본문이 있습니다.
+  c:\users\kym2-21\source\prj\basic\day07_quiz\main.c(27): note: 'main'의 이전 정의를 참조하십시오.

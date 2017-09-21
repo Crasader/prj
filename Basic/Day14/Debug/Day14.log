@@ -1,0 +1,11 @@
+﻿  main.cpp
+c:\users\kym2-21\source\prj\basic\day14\main.cpp(65): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kym2-21\source\prj\basic\day14\main.cpp(31): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  c:\users\kym2-21\source\prj\basic\day14\main.cpp(65): note: 컴파일 중인 함수 템플릿 인스턴스화 'T2 GetMax<int,double>(T,T2)'에 대한 참조를 확인하십시오.
+          with
+          [
+              T2=double,
+              T=int
+          ]
+  Day14.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day14.exe
+  Day14.vcxproj -> C:\Users\KYM2-21\source\prj\Basic\Debug\Day14.pdb (Partial PDB)
