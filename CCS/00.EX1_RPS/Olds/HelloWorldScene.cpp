@@ -5,7 +5,7 @@
 #include<time.h>
 
 int Ai_Pick();				//Ai 결정
-int Judge(int Player, int Ai);		//결과 연산
+int Judge(int Player, int Ai);		//결과 연산 & 출력
 
 int PlayerWinCount = 0;
 int EnemyWinCount = 0;
@@ -35,10 +35,9 @@ bool HelloWorld::init()
 	/////////////////////////////
 	srand((int)time(NULL)); 
 
-	SetInitTexts(this);		//
-	SetRPSMenu(this);		//한번만 그려짐
-
-	SetCountNumbTexts(this);	//갱신마다 지워짐
+	SetInitTexts(this);
+	//SetResultTexts(this);
+	SetRPSMenu(this);
 
 	return true;
 }
@@ -47,59 +46,37 @@ void HelloWorld::ResetALL(Ref *sender)
 	for (int i = 0; i <= 5; i++)
 	{
 		removeChild(getChildByTag(i), true);
-		//Tag 0~5까지 삭제
 	}
 }
-
-void HelloWorld::SetInitTexts(Ref *sender)	//
+void HelloWorld::SetInitTexts(Ref *sender)
 {
 	char Text[100];
 
-	sprintf(Text, "Your Score : ", PlayerWinCount);
+	sprintf(Text, "Your Score : %d", PlayerWinCount);
 	auto PlayerWinCountText = LabelTTF::create(Text, "Arial", 20);
 	PlayerWinCountText->setColor(Color3B::BLUE);
 	PlayerWinCountText->setPosition(50, 290);
-	PlayerWinCountText->setAnchorPoint(Vec2(0.0f, 1.0f));
-
-	this->addChild(PlayerWinCountText);
-
-	sprintf(Text, "Computer Score : ", EnemyWinCount);
-	auto EnemyWinCountText = LabelTTF::create(Text, "Arial", 20);
-	EnemyWinCountText->setColor(Color3B::BLUE);
-	EnemyWinCountText->setPosition(430, 290);
-	EnemyWinCountText->setAnchorPoint(Vec2(1.0f, 1.0f));
-
-	this->addChild(EnemyWinCountText);
-}
-void HelloWorld::SetCountNumbTexts(Ref *sender)
-{//점수 텍스트
-	char Text[100];
-
-	sprintf(Text, "%d", PlayerWinCount);
-	auto PlayerWinCountText = LabelTTF::create(Text, "Arial", 20);
-	PlayerWinCountText->setColor(Color3B::BLUE);
-	PlayerWinCountText->setPosition(167, 289);
 	PlayerWinCountText->setAnchorPoint(Vec2(0.0f, 1.0f));
 	PlayerWinCountText->setTag(1);
 
 	this->addChild(PlayerWinCountText);
 
-	//
-
-	sprintf(Text, "%d", EnemyWinCount);
+	sprintf(Text, "Computer Score : %d", EnemyWinCount);
 	auto EnemyWinCountText = LabelTTF::create(Text, "Arial", 20);
 	EnemyWinCountText->setColor(Color3B::BLUE);
-	EnemyWinCountText->setPosition(432, 289);
-	EnemyWinCountText->setAnchorPoint(Vec2(0.0f, 1.0f));
+	EnemyWinCountText->setPosition(430, 290);
+	EnemyWinCountText->setAnchorPoint(Vec2(1.0f, 1.0f));
 	EnemyWinCountText->setTag(2);
 
 	this->addChild(EnemyWinCountText);
 
 }
 void HelloWorld::SetResultTexts(Ref *sender)
-{//결과 출력
-	SetCountNumbTexts(sender);
+{
+	SetInitTexts(sender);
 	char Text[100];
+
+	//switch
 
 	char RText[3][50] = { "비겼습니다!","당신이 이겼습니다!","컴퓨터가 이겼습니다!" };
 	auto ResultText = LabelTTF::create(RText[Result], "Arial", 25);
@@ -152,14 +129,46 @@ void HelloWorld::SetRPSMenu(Ref *sender)
 	RPSItem->setPosition(Vec2(0, -50));
 	pMenu->addChild(RPSItem);
 
+	//pMenu->alignItemsHorizontally();
 	pMenu->setTag(20);
 	pMenu->setPosition(Vec2(240, 90));
 	this->addChild(pMenu);
 
 }
-
 void HelloWorld::doClick(Ref *sender, int Tag)
 {
+	//v1
+	//if (Tag == 13 && Result != -1)
+	//{
+	//	ResetALL(sender);
+
+	//	PlayerSelect = 0;
+	//	EnemySelect = 0;
+	//	Result = -1;
+
+	//	SetInitTexts(sender);
+	//}
+	//else if (Tag >= 10 && Tag < 13 && Result == -1)
+	//{
+	//	ResetALL(sender);
+
+	//	PlayerSelect = Tag - 9;
+	//	EnemySelect = Ai_Pick();				//Ai 결정
+	//	Result = Judge(PlayerSelect, EnemySelect);		//결과 연산
+
+	//	if (Result == 1)
+	//	{
+	//		PlayerWinCount++;
+	//	}
+	//	else if (Result == 2)
+	//	{
+	//		EnemyWinCount++;
+	//	}
+	//	
+	//	SetResultTexts(sender);
+	//}
+
+	//v2
 	if (Tag == 13)
 	{
 		ResetALL(sender);
@@ -167,7 +176,7 @@ void HelloWorld::doClick(Ref *sender, int Tag)
 		PlayerWinCount = 0;
 		EnemyWinCount = 0;
 
-		SetCountNumbTexts(sender);
+		SetInitTexts(sender);
 	}
 	else if (Tag >= 10 && Tag < 13)
 	{
@@ -197,6 +206,7 @@ int Ai_Pick()
 
 	return pick;
 }
+
 int Judge(int Player, int Ai)
 {
 	int result;
@@ -213,5 +223,16 @@ int Judge(int Player, int Ai)
 			result = 2;
 	}
 
+	////출력////
+/*
+	showHand(Player, Ai);
+	switch (result)
+	{
+	case 0:printf("비겼습니다."); break;
+	case 1:printf("이겼습니다."); break;
+	case 2:printf("졌습니다."); break;
+	}
+	printf("\n\n");
+*/
 	return result;
 }

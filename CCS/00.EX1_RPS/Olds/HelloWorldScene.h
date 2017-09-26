@@ -18,14 +18,12 @@ public:
 
 	//
 
-	void SetInitTexts(Ref *sender);
 	void SetResultTexts(Ref *sender);
-	void SetCountNumbTexts(Ref *sender);
+	void SetInitTexts(Ref *sender);
 
 	void doClick(Ref *sender,int Tag);
 	void SetRPSMenu(Ref *sender);
 	void ResetALL(Ref *sender);
-
 };
 
 #endif // __HELLOWORLD_SCENE_H__

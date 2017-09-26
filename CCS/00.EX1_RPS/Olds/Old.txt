@@ -1,11 +1,14 @@
-ï»¿#include "HelloWorldScene.h"
-//#include "SimpleAudioEngine.h"
+
+//ÅØ½ºÆ®±îÁö Áö¿ì°í ´Ù½Ã ±×¸®´Â °ÍÀº ºñÈ¿À²Àû
+//¼ıÀÚ¸¸ Áö¿ì°í ´Ù½Ã ±×¸®µµ·Ï ¹Ù²ñ
+
+#include "HelloWorldScene.h"
 
 #include<stdlib.h>
 #include<time.h>
 
-int Ai_Pick();				//Ai ê²°ì •
-int Judge(int Player, int Ai);		//ê²°ê³¼ ì—°ì‚°
+int Ai_Pick();				//Ai °áÁ¤
+int Judge(int Player, int Ai);		//°á°ú ¿¬»ê
 
 int PlayerWinCount = 0;
 int EnemyWinCount = 0;
@@ -35,73 +38,51 @@ bool HelloWorld::init()
 	/////////////////////////////
 	srand((int)time(NULL)); 
 
-	SetInitTexts(this);		//
-	SetRPSMenu(this);		//í•œë²ˆë§Œ ê·¸ë ¤ì§
-
-	SetCountNumbTexts(this);	//ê°±ì‹ ë§ˆë‹¤ ì§€ì›Œì§
+	SetInitTexts(this);
+	SetRPSMenu(this);
 
 	return true;
 }
+
+
 void HelloWorld::ResetALL(Ref *sender)
 {
 	for (int i = 0; i <= 5; i++)
 	{
 		removeChild(getChildByTag(i), true);
-		//Tag 0~5ê¹Œì§€ ì‚­ì œ
 	}
 }
-
-void HelloWorld::SetInitTexts(Ref *sender)	//
+void HelloWorld::SetInitTexts(Ref *sender)
 {
 	char Text[100];
 
-	sprintf(Text, "Your Score : ", PlayerWinCount);
+	sprintf(Text, "Your Score : %d", PlayerWinCount);
 	auto PlayerWinCountText = LabelTTF::create(Text, "Arial", 20);
 	PlayerWinCountText->setColor(Color3B::BLUE);
 	PlayerWinCountText->setPosition(50, 290);
-	PlayerWinCountText->setAnchorPoint(Vec2(0.0f, 1.0f));
-
-	this->addChild(PlayerWinCountText);
-
-	sprintf(Text, "Computer Score : ", EnemyWinCount);
-	auto EnemyWinCountText = LabelTTF::create(Text, "Arial", 20);
-	EnemyWinCountText->setColor(Color3B::BLUE);
-	EnemyWinCountText->setPosition(430, 290);
-	EnemyWinCountText->setAnchorPoint(Vec2(1.0f, 1.0f));
-
-	this->addChild(EnemyWinCountText);
-}
-void HelloWorld::SetCountNumbTexts(Ref *sender)
-{//ì ìˆ˜ í…ìŠ¤íŠ¸
-	char Text[100];
-
-	sprintf(Text, "%d", PlayerWinCount);
-	auto PlayerWinCountText = LabelTTF::create(Text, "Arial", 20);
-	PlayerWinCountText->setColor(Color3B::BLUE);
-	PlayerWinCountText->setPosition(167, 289);
 	PlayerWinCountText->setAnchorPoint(Vec2(0.0f, 1.0f));
 	PlayerWinCountText->setTag(1);
 
 	this->addChild(PlayerWinCountText);
 
-	//
-
-	sprintf(Text, "%d", EnemyWinCount);
+	sprintf(Text, "Computer Score : %d", EnemyWinCount);
 	auto EnemyWinCountText = LabelTTF::create(Text, "Arial", 20);
 	EnemyWinCountText->setColor(Color3B::BLUE);
-	EnemyWinCountText->setPosition(432, 289);
-	EnemyWinCountText->setAnchorPoint(Vec2(0.0f, 1.0f));
+	EnemyWinCountText->setPosition(430, 290);
+	EnemyWinCountText->setAnchorPoint(Vec2(1.0f, 1.0f));
 	EnemyWinCountText->setTag(2);
 
 	this->addChild(EnemyWinCountText);
 
 }
 void HelloWorld::SetResultTexts(Ref *sender)
-{//ê²°ê³¼ ì¶œë ¥
-	SetCountNumbTexts(sender);
+{
+	SetInitTexts(sender);
 	char Text[100];
 
-	char RText[3][50] = { "ë¹„ê²¼ìŠµë‹ˆë‹¤!","ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤!","ì»´í“¨í„°ê°€ ì´ê²¼ìŠµë‹ˆë‹¤!" };
+	//switch
+
+	char RText[3][50] = { "ºñ°å½À´Ï´Ù!","´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù!","ÄÄÇ»ÅÍ°¡ ÀÌ°å½À´Ï´Ù!" };
 	auto ResultText = LabelTTF::create(RText[Result], "Arial", 25);
 	ResultText->setColor(Color3B::RED);
 	ResultText->setPosition(240, 260);
@@ -134,7 +115,7 @@ void HelloWorld::SetRPSMenu(Ref *sender)
 {
 	//RPS
 
-	char RPS[3][20] = { "[ ê°€ìœ„ ]","[ ë°”ìœ„ ]","[  ë³´  ]" };
+	char RPS[3][20] = { "[ °¡À§ ]","[ ¹ÙÀ§ ]","[  º¸  ]" };
 
 	auto pMenu = Menu::create(NULL);
 	for (int i = 0; i < 3; i++)
@@ -146,20 +127,52 @@ void HelloWorld::SetRPSMenu(Ref *sender)
 		pMenu->addChild(RPSItem);
 	}
 
-	auto RPSItem = MenuItemFont::create("[ ë‹¤ì‹œí•˜ê¸° ]", CC_CALLBACK_1(HelloWorld::doClick, this, 13));
+	auto RPSItem = MenuItemFont::create("[ ´Ù½ÃÇÏ±â ]", CC_CALLBACK_1(HelloWorld::doClick, this, 13));
 	RPSItem->setColor(Color3B::BLACK);
 	RPSItem->setTag(13);
 	RPSItem->setPosition(Vec2(0, -50));
 	pMenu->addChild(RPSItem);
 
+	//pMenu->alignItemsHorizontally();
 	pMenu->setTag(20);
 	pMenu->setPosition(Vec2(240, 90));
 	this->addChild(pMenu);
 
 }
-
 void HelloWorld::doClick(Ref *sender, int Tag)
 {
+	//v1
+	//if (Tag == 13 && Result != -1)
+	//{
+	//	ResetALL(sender);
+
+	//	PlayerSelect = 0;
+	//	EnemySelect = 0;
+	//	Result = -1;
+
+	//	SetInitTexts(sender);
+	//}
+	//else if (Tag >= 10 && Tag < 13 && Result == -1)
+	//{
+	//	ResetALL(sender);
+
+	//	PlayerSelect = Tag - 9;
+	//	EnemySelect = Ai_Pick();				//Ai °áÁ¤
+	//	Result = Judge(PlayerSelect, EnemySelect);		//°á°ú ¿¬»ê
+
+	//	if (Result == 1)
+	//	{
+	//		PlayerWinCount++;
+	//	}
+	//	else if (Result == 2)
+	//	{
+	//		EnemyWinCount++;
+	//	}
+	//	
+	//	SetResultTexts(sender);
+	//}
+
+	//v2
 	if (Tag == 13)
 	{
 		ResetALL(sender);
@@ -167,15 +180,15 @@ void HelloWorld::doClick(Ref *sender, int Tag)
 		PlayerWinCount = 0;
 		EnemyWinCount = 0;
 
-		SetCountNumbTexts(sender);
+		SetInitTexts(sender);
 	}
 	else if (Tag >= 10 && Tag < 13)
 	{
 		ResetALL(sender);
 
 		PlayerSelect = Tag - 9;
-		EnemySelect = Ai_Pick();				//Ai ê²°ì •
-		Result = Judge(PlayerSelect, EnemySelect);		//ê²°ê³¼ ì—°ì‚°
+		EnemySelect = Ai_Pick();				//Ai °áÁ¤
+		Result = Judge(PlayerSelect, EnemySelect);		//°á°ú ¿¬»ê
 
 		if (Result == 1)
 		{
@@ -188,6 +201,7 @@ void HelloWorld::doClick(Ref *sender, int Tag)
 
 		SetResultTexts(sender);
 	}
+
 }
 
 int Ai_Pick()
@@ -197,21 +211,35 @@ int Ai_Pick()
 
 	return pick;
 }
+
 int Judge(int Player, int Ai)
 {
 	int result;
 
-	if (Player == Ai)	result = 0;	// ë¹„ê¹€
+	if (Player == Ai)	result = 0;	// ºñ±è
 	else
 	{
 		int temp = Player - Ai;
-		if (temp == 1 || temp == -2)	//ì´ê¹€
+		if (temp == 1 || temp == -2)	//ÀÌ±è
 		{
 			result = 1;
 		}
-		else				//ì§
+		else				//Áü
 			result = 2;
 	}
 
+	////Ãâ·Â////
+/*
+	showHand(Player, Ai);
+	switch (result)
+	{
+	case 0:printf("ºñ°å½À´Ï´Ù."); break;
+	case 1:printf("ÀÌ°å½À´Ï´Ù."); break;
+	case 2:printf("Á³½À´Ï´Ù."); break;
+	}
+	printf("\n\n");
+*/
 	return result;
 }
+
+
