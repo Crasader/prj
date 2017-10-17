@@ -74,6 +74,9 @@ void HelloWorld::StageReader(xml_node nodeItem)
 {
 	xml_node NextnodeItem = nodeItem.next_sibling("Info");
 
+	std::string logText = nodeItem.child("Numb").text().get();
+	log("%s", logText.c_str());
+
 	std::string symbolName = nodeItem.child("Type").text().get();
 	int val = atoi(nodeItem.child("Value").text().get());
 
@@ -85,7 +88,6 @@ void HelloWorld::StageReader(xml_node nodeItem)
 	}
 	else if (symbolName == "Enemy")
 	{
-		log("A");
 		int x = xmlPosTrans(nodeItem.child("POS_X").text().get(),0);
 		int y = xmlPosTrans(nodeItem.child("POS_Y").text().get(),1);
 
@@ -370,12 +372,12 @@ void HelloWorld::PlayerMove()
 void HelloWorld::EnemyMove()
 {
 	//EnemyMove
-	for (int j = 0; j < Enemys.size(); j++)
+	for (int j = Enemys.size() - 1; j >= 0; j--)
 	{
 		if (Enemys.at(j)->_life <= 0)
 		{//remove
 
-			if (Enemys.at(j)->_life > -100)
+			if (Enemys.at(j)->_RemoveBy != 1)
 			{
 				ExplosionShow(Enemys.at(j)->getPosition());
 			}
@@ -392,7 +394,7 @@ void HelloWorld::ShotMove()
 {
 	//ShotMove
 
-	for (int i = 0; i < Bullets.size(); i++)
+	for (int i = Bullets.size() - 1; i >= 0; i--)
 	{
 		if (Bullets.at(i)->_life == 0)
 		{//remove
@@ -404,7 +406,7 @@ void HelloWorld::ShotMove()
 
 			if (Bullets.at(i)->_isPlayers == 1)
 			{
-				for (int j = 0; j < Enemys.size(); j++)
+				for (int j = Enemys.size() - 1; j >= 0; j--)
 				{
 					if (Bullets.at(i)->boundingBox().intersectsRect(Enemys.at(j)->boundingBox()))
 					{
@@ -537,21 +539,6 @@ void HelloWorld::ExitClick(Ref *sender)
 #endif
 }
 
-//void HelloWorld::CreateEnemyLoop()
-//{
-//	for (int i = 0; i < sqrt(1 + rand() % 9); i++)
-//	{
-//		Vec2 position = Vec2(50 + rand() % 220, 640);
-//		Enemy *newB = new Enemy(this, position, 0);
-//	}
-//
-//	auto Action_Rand = Sequence::create(
-//		DelayTime::create(3 + (rand() % 30) / 10.0),
-//		CallFunc::create(CC_CALLBACK_0(HelloWorld::CreateEnemyLoop, this)),
-//		NULL
-//	);
-//	this->runAction(Action_Rand->clone());
-//}
 void HelloWorld::createBullet(Vec2 position, int type)
 {
 	Bullet *newB = new Bullet(this, position, type);
@@ -580,7 +567,6 @@ void HelloWorld::GameOver()
 }
 void HelloWorld::ExplosionShow(Vec2 Position)
 {
-	//애니메이션 스프라이트 5프레임을 차례로 등록해줌
 	auto Explomation = Animation::create();
 	Explomation->addSpriteFrameWithFileName("Images/exps/exp_01.png");
 	Explomation->addSpriteFrameWithFileName("Images/exps/exp_02.png");
@@ -588,7 +574,6 @@ void HelloWorld::ExplosionShow(Vec2 Position)
 	Explomation->addSpriteFrameWithFileName("Images/exps/exp_04.png");
 	Explomation->addSpriteFrameWithFileName("Images/exps/exp_05.png");
 
-	//0.1초 간격으로 애니메이션 처리 설정
 	Explomation->setDelayPerUnit(0.15f);
 
 	//에니메이션 생성
@@ -602,5 +587,5 @@ void HelloWorld::ExplosionShow(Vec2 Position)
 	Explo->setPosition(Vec2(Position.x, Position.y));
 	Explo->setZOrder(10);
 	this->addChild(Explo);
-	Explo->runAction(Exploseq);
+	Explo->runAction(Exploseq->clone());
 }

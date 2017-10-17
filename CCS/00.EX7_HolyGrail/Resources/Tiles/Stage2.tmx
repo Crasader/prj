@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="4">
+ <tileset firstgid="1" source="Dessert.tsx"/>
+ <tileset firstgid="49" source="Meta.tsx"/>
+ <layer name="Tile Layer 1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzjZmBgECITcwKxHBrmxiJGLB41b9S8UfNGzRs1j3bmkVvW4yrvAeQ8Kng=
+  </data>
+ </layer>
+ <layer name="Meta" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwzZGBgMKQAowNsYsSCUfNGzRs1b9S8UfNoax41y3sAN08NBQ==
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="Start" x="160" y="192" width="32" height="32"/>
+  <object id="2" name="Item" x="320" y="32" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="3" name="Item" x="64" y="544" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="4"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

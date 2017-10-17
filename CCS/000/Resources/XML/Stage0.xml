@@ -3,139 +3,163 @@
 	<Info>
 		<Numb>0</Numb>
 		<Type>Enemy</Type>
-		<Value>0</Value>
-		<POS_X>+50</POS_X>
+		<Value>1</Value>
+		<POS_X>-100</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
 		<Numb>1</Numb>
 		<Type>Wait</Type>
-		<Value>750</Value>
+		<Value>500</Value>
 	</Info>
 	<Info>
 		<Numb>2</Numb>
 		<Type>Enemy</Type>
-		<Value>0</Value>
-		<POS_X>+50</POS_X>
+		<Value>1</Value>
+		<POS_X>-100</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
 		<Numb>3</Numb>
 		<Type>Wait</Type>
-		<Value>750</Value>
+		<Value>500</Value>
 	</Info>
 	<Info>
 		<Numb>4</Numb>
 		<Type>Enemy</Type>
-		<Value>0</Value>
-		<POS_X>+50</POS_X>
+		<Value>1</Value>
+		<POS_X>-100</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
 		<Numb>5</Numb>
 		<Type>Wait</Type>
-		<Value>2500</Value>
+		<Value>500</Value>
 	</Info>
 	<Info>
 		<Numb>6</Numb>
-	</Info>
-	<Info>
-		<Numb>7</Numb>
 		<Type>Enemy</Type>
-		<Value>0</Value>
-		<POS_X>-50</POS_X>
+		<Value>1</Value>
+		<POS_X>-100</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
-		<Numb>8</Numb>
+		<Numb>7</Numb>
 		<Type>Wait</Type>
-		<Value>750</Value>
+		<Value>2500</Value>
+	</Info>
+	<Info>
+		<Numb>8</Numb>
 	</Info>
 	<Info>
 		<Numb>9</Numb>
 		<Type>Enemy</Type>
-		<Value>0</Value>
-		<POS_X>-50</POS_X>
+		<Value>2</Value>
+		<POS_X>CENTER</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
 		<Numb>10</Numb>
 		<Type>Wait</Type>
-		<Value>750</Value>
+		<Value>500</Value>
 	</Info>
 	<Info>
 		<Numb>11</Numb>
 		<Type>Enemy</Type>
-		<Value>0</Value>
-		<POS_X>-50</POS_X>
+		<Value>2</Value>
+		<POS_X>CENTER</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
 		<Numb>12</Numb>
 		<Type>Wait</Type>
-		<Value>2500</Value>
+		<Value>500</Value>
 	</Info>
 	<Info>
 		<Numb>13</Numb>
+		<Type>Enemy</Type>
+		<Value>2</Value>
+		<POS_X>CENTER</POS_X>
+		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
 		<Numb>14</Numb>
+		<Type>Wait</Type>
+		<Value>500</Value>
+	</Info>
+	<Info>
+		<Numb>15</Numb>
+		<Type>Enemy</Type>
+		<Value>4</Value>
+		<POS_X>CENTER</POS_X>
+		<POS_Y>TOP</POS_Y>
+	</Info>
+	<Info>
+		<Numb>16</Numb>
+		<Type>Wait</Type>
+		<Value>2500</Value>
+	</Info>
+	<Info>
+		<Numb>17</Numb>
+	</Info>
+	<Info>
+		<Numb>18</Numb>
 		<Type>Enemy</Type>
 		<Value>0</Value>
 		<POS_X>CENTER</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
-		<Numb>15</Numb>
+		<Numb>19</Numb>
 		<Type>Wait</Type>
 		<Value>300</Value>
 	</Info>
 	<Info>
-		<Numb>16</Numb>
+		<Numb>20</Numb>
 		<Type>Enemy</Type>
 		<Value>0</Value>
 		<POS_X>+120</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
-		<Numb>17</Numb>
+		<Numb>21</Numb>
 		<Type>Enemy</Type>
 		<Value>0</Value>
 		<POS_X>-120</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
-		<Numb>18</Numb>
+		<Numb>22</Numb>
 		<Type>Wait</Type>
 		<Value>300</Value>
 	</Info>
 	<Info>
-		<Numb>19</Numb>
+		<Numb>23</Numb>
 		<Type>Enemy</Type>
 		<Value>0</Value>
 		<POS_X>+80</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
-		<Numb>20</Numb>
+		<Numb>24</Numb>
 		<Type>Enemy</Type>
 		<Value>0</Value>
 		<POS_X>-80</POS_X>
 		<POS_Y>TOP</POS_Y>
 	</Info>
 	<Info>
-		<Numb>21</Numb>
+		<Numb>25</Numb>
 	</Info>
 	<Info>
-		<Numb>22</Numb>
+		<Numb>26</Numb>
 	</Info>
 	<Info>
-		<Numb>23</Numb>
+		<Numb>27</Numb>
 		<Type>Wait</Type>
 		<Value>5000</Value>
 	</Info>
 	<Info>
-		<Numb>24</Numb>
+		<Numb>28</Numb>
 		<Type>_StageEnd</Type>
 		<Value>0</Value>
 	</Info>

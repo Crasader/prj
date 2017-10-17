@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="23">
+ <tileset firstgid="1" source="Dessert.tsx"/>
+ <tileset firstgid="49" source="Meta.tsx"/>
+ <layer name="Tile Layer 1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwTYWBgECITiwKxHBrmxiJGLOYcNW/UvFHzRs3DY54IA/4ySQ6P3Gh5xcAgA8RMZGJZLOYBAHoMKUQ=
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="Start" x="32" y="160" width="32" height="29.3333"/>
+  <object id="11" name="Monster" x="352" y="64" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="13" name="Monster" x="352" y="224" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="14" name="Monster" x="352" y="352" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="15" name="Item" x="160" y="64" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="19" name="Item" x="160" y="224" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="20" name="Item" x="160" y="544" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="21" name="Item" x="160" y="352" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="22" name="Item" x="352" y="544" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="5"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Meta" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwzZGBgMKQAowNsYsSCUfNGzRs1b9Q8Qubhw3IE5OnhvsFuHjXLewD7qA+g
+  </data>
+ </layer>
+</map>

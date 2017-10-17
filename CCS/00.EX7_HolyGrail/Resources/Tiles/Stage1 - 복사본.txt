@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="14">
+ <tileset firstgid="1" source="Dessert.tsx"/>
+ <tileset firstgid="49" source="Meta.tsx"/>
+ <layer name="Tile Layer 1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwTYWBgEMKBRfHIweTl0DA3FjEY5sQjh0se2TwRJLuxqSfERzcP3a20Mo8JimWR2DA+Je4jNfyobZ4MEf4hxTxSMb3Mw5cfsOUBYt2HTR5fnIyaRzh+B4v7sOV3QnmEHukZPc+SgrG5HQDQoCYZ
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="Start" x="320" y="320" width="32" height="32"/>
+  <object id="3" name="Item" x="160" y="160" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="4" name="Item" x="160" y="480" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="5" name="Item" x="384" y="32" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="6" name="Monster" x="320" y="32" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="7" name="Item" x="160" y="32" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="8" name="Monster" x="64" y="32" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="9" name="Item" x="32" y="352" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="10" name="Monster" x="160" y="288" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="11" name="Monster" x="160" y="256" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="12" name="Item" x="32" y="288" width="32" height="32">
+   <properties>
+    <property name="ItemType" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="13" name="Monster" x="96" y="480" width="32" height="32">
+   <properties>
+    <property name="MonsterType" type="int" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Meta" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJwzZGBgMKQAowNsYsTI4ZI3RGMj24uunhAfm3mk6CfXPHLDjxj7qeE+Sswj5B9SzCMV0Ms8UvMAse6jRv4ZyeYRq4dY86jpPlqkF1IBuemZFLcDAEUtFvk=
+  </data>
+ </layer>
+</map>

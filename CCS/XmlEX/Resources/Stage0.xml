@@ -1,0 +1,20 @@
+﻿<result>
+	<total>3</total>
+	<page>1</page>
+	<per>10</per>
+	<items>
+		<item>
+			<seq>1</seq>
+			<subject>ㅎㅇ</subject>
+			<name>Mayn</name>
+			<phone>001</phone>
+		</item>
+
+		<item>
+			<seq>2</seq>
+			<subject>HeWllo</subject>
+			<name>Waryn</name>
+			<phone>032</phone>
+		</item>
+	</items>
+</result>

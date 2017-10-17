@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32" nextobjectid="2">
+ <tileset firstgid="1" source="TileSet.tsx"/>
+ <tileset firstgid="49" source="Meta.tsx"/>
+ <layer name="Tile Layer 1" width="20" height="10" opacity="0.9">
+  <data encoding="base64" compression="zlib">
+   eJyTY2BgkBvFeDETFkyJeVxYMCXmCWHB9AwLQhifXmxhQQjjC0dqmwcAUOARfQ==
+  </data>
+ </layer>
+ <objectgroup name="Object">
+  <object id="1" name="Start" x="2" y="194" width="59" height="42"/>
+ </objectgroup>
+ <layer name="Meta" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowAVGEHxqHkMDADnQAGR
+  </data>
+ </layer>
+</map>
